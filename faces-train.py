@@ -21,7 +21,7 @@ for root, dirs, files in os.walk(image_dir):
 			path = os.path.join(root, file)
 
 			label = os.path.basename(root).replace(" ", "-").lower()
-			#print(label, path)
+			# print(label, path)
 			if not label in label_ids:
 				label_ids[label] = current_id
 				current_id += 1
@@ -33,7 +33,7 @@ for root, dirs, files in os.walk(image_dir):
 			size = (550, 550)
 			final_image = pil_image.resize(size, Image.ANTIALIAS)
 			image_array = np.array(final_image, "uint8")
-			#print(image_array)
+			# print(image_a rray)
 			faces = face_cascade.detectMultiScale(image_array, scaleFactor=1.5, minNeighbors=5)
 
 			for (x,y,w,h) in faces:
